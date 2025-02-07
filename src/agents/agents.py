@@ -8,6 +8,13 @@ from agents.research_assistant import research_assistant
 from schema import AgentInfo
 from agents.nonarcisai import nonarcis_ai
 
+from agents.counselor_agent import counselor_agent
+from agents.case_analyzer_agent import case_analyzer_agent
+from agents.npc_agent import npc_agent
+
+
+
+
 DEFAULT_AGENT = "research-assistant"
 
 
@@ -27,6 +34,21 @@ agents: dict[str, Agent] = {
         description="A specialized counselor that analyzes conversations for toxic relationship patterns.",
         graph=nonarcis_ai
     ),
+    "counselor": Agent(
+        description="A warm and empathetic counselor for relationship discussions.",
+        graph=counselor_agent
+    ),
+    "case-analyzer": Agent(
+        description="A specialized analyzer for relationship patterns and toxicity assessment.",
+        graph=case_analyzer_agent
+    ),
+    "npc-agent": Agent(
+        description=(
+            "An AI character with a specific personality that interacts with users. "
+            "Always stays in character, using appropriate tone, style, and emojis as defined."
+        ),
+        graph=npc_agent
+    )
 }
 
 
